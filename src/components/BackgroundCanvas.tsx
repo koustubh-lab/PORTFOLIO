@@ -56,7 +56,6 @@ function FloatingCode({
   const [isAnimating, setIsAnimating] = useState(false)
   const [animationPhase, setAnimationPhase] = useState(0)
   const smoothedGyroPos = useRef({ x: 0, y: 0 })
-  console.log("index", index)
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), delay * 1000)
@@ -70,6 +69,7 @@ function FloatingCode({
         setTimeout(() => setIsAnimating(false), 3000)
       }
     }
+    console.log(index)
 
     const interval = setInterval(triggerAnimation, Math.random() * 8000 + 2000)
     return () => clearInterval(interval)

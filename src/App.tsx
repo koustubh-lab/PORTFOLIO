@@ -50,8 +50,9 @@ export default function Home() {
 
       const { success } = response.data
       toast.info(success ? "✅ Email sent!" : "❌ Failed to send email")
-    } catch {
+    } catch (error: any) {
       toast.error("❌ Error sending email")
+      console.log(error)
     } finally {
       setLoading(false)
     }
